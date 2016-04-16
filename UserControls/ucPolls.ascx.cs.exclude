@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class UserControls_ucPolls : System.Web.UI.UserControl
+{
+    CurrentPollRepository rep = new CurrentPollRepository();
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!Page.IsPostBack)
+        {
+            PollList.DataBind();
+            var poll = rep.GetCurrentPoll();
+            PollList.SelectedValue = poll == null ? "-1" : poll.PollId.ToString();
+
+            if (PollList.Items.Count == 0)
+                PollList.Visible = false;
+            else
+                Poll1.PollID = Convert.ToInt32(PollList.SelectedValue);
+        }
+    }
+
+    protected void PollList_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        Poll1.PollID = Convert.ToInt32(PollList.SelectedValue);
+        Poll1.DataBind();
+    }
+}

@@ -1,0 +1,55 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+/// <summary>
+/// Summary description for CurrentPollRepository
+/// </summary>
+public class CurrentPollRepository
+{
+    MuniDataContext _db;
+
+    public CurrentPollRepository()
+    {
+        _db = new MuniDataContext();
+
+    }
+
+    public CurrentPoll GetCurrentPoll()
+    {
+        return (from n in _db.CurrentPolls select n).FirstOrDefault();
+    }
+
+    public bool SetCurrentPoll(int pollId)
+    {
+        try
+        {
+            var existing = GetCurrentPoll();
+            if (existing == null)
+            {
+                existing = new CurrentPoll();
+                existing.PollId = pollId;
+                _db.CurrentPolls.InsertOnSubmit(existing);
+                _db.SubmitChanges();
+            }
+            else
+            {
+                existing.PollId = pollId;
+                _db.SubmitChanges();
+            }
+
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+    }
+
+    public IEnumerable<Poll> GetAll()
+    {
+        return (from n in _db.Polls select n);
+    }
+
+}

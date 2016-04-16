@@ -1,0 +1,1170 @@
+﻿/* DEFAULTS
+----------------------------------------------------------*/
+html, body, div, pre, form, fieldset, input, h1, h2, h3, h4, h5, h6, p, textarea, ul, ol, li, dl, dt, dd, blockquote, th, td { margin:0; padding:0; }
+table { border-collapse:collapse; border-spacing:0; }
+fieldset, img { border:0; }
+address, caption, cite, code { font-style:normal; font-weight:normal; }
+ul { list-style:none; }
+caption, th { text-align:left; }
+h1, h2, h3, h4, h5, h6 { font-size:100%; font-weight:normal; }
+q:before, q:after { content:''; }
+abbr, acronym { border:0; }
+body
+{
+	background: white;
+	font-family: "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Arial, Helvetica, Verdana, sans-serif;
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	color: #696969;
+	font-size: 0.75em;
+	width: 1075px;
+}
+
+caption, th, td {
+	text-align:left;
+	font-weight:normal;
+}
+a:link, a:visited
+{
+	color: #3B72A4;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #27537c;
+	text-decoration: none;
+}
+
+a:active
+{
+	color: #3B72A4;
+	text-decoration: none;
+}
+
+p
+{
+	margin-bottom: 10px;
+	line-height: 1.6em;
+}
+
+.EventTitle a, .EventTitle a:visited
+{
+	color: #656565;
+	text-decoration: none;
+}
+
+.EventTitle a:hover
+{
+	color: #3B72A4;
+	text-decoration: none;
+	font-size:1.1em;
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6
+{
+	font-size: 1.5em;
+	color: #666666;
+	font-variant: small-caps;
+	text-transform: none;
+	font-weight: 200;
+	margin-bottom: 0px;
+}
+
+h1
+{
+	font-size: 1.6em;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+h2
+{
+	font-size: 1.5em;
+	font-weight: 600;
+}
+
+h3
+{
+	font-size: 1.2em;
+}
+
+h4
+{
+	font-size: 1.1em;
+}
+
+h5, h6
+{
+	font-size: 1em;
+}
+
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+	margin-top: 0px;
+}
+
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+.page
+{
+	background-color: #fff;
+	border: 0px solid #496077;
+}
+
+.header
+{
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+	background: #4b6c9e;
+	width: 100%;
+}
+
+.header h1
+{
+	font-weight: 700;
+	margin: 0px;
+	padding: 0px 0px 0px 20px;
+	color: #f9f9f9;
+	border: none;
+	line-height: 2em;
+	font-size: 2em;
+}
+
+.main
+{
+	padding: 0px 12px;
+	margin: 12px 8px 8px 8px;
+	min-height: 420px;
+}
+
+.leftCol
+{
+	padding: 6px 0px;
+	margin: 12px 8px 8px 8px;
+	width: 200px;
+	min-height: 200px;
+}
+
+.footerLinks
+{
+	color: #27537c;
+	padding: 8px 0px 0px 0px;
+	margin: 0px auto;
+	text-align: center;
+	line-height: normal;
+}
+
+
+/* TAB MENU   
+----------------------------------------------------------*/
+
+div.hideSkiplink
+{
+	background-color: #3a4f63;
+	width: 100%;
+}
+
+div.menu
+{
+	padding: 4px 0px 4px 8px;
+}
+
+div.menu ul
+{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	width: auto;
+}
+
+div.menu ul li a, div.menu ul li a:visited
+{
+	background-color: #465c71;
+	border: 1px #4e667d solid;
+	color: #dde4ec;
+	display: block;
+	line-height: 1.35em;
+	padding: 4px 20px;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+div.menu ul li a:hover
+{
+	background-color: #bfcbd6;
+	color: #465c71;
+	text-decoration: none;
+}
+
+div.menu ul li a:active
+{
+	background-color: #465c71;
+	color: #cfdbe6;
+	text-decoration: none;
+}
+
+/* FORM ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset
+{
+	margin: 1em 0px;
+	padding: 1em;
+	border: 1px solid #ccc;
+}
+
+fieldset p
+{
+	margin: 2px 12px 10px 10px;
+}
+
+fieldset.login label, fieldset.register label, fieldset.changePassword label
+{
+	display: block;
+}
+
+fieldset label.inline
+{
+	display: inline;
+}
+
+legend
+{
+	font-size: 1.1em;
+	font-weight: 600;
+	padding: 2px 4px 8px 4px;
+}
+
+input.textEntry
+{
+	width: 320px;
+	border: 1px solid #ccc;
+}
+
+input.passwordEntry
+{
+	width: 320px;
+	border: 1px solid #ccc;
+}
+
+div.accountInfo
+{
+	width: 42%;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+
+.clear
+{
+	clear: both;
+}
+
+.title
+{
+	display: block;
+	float: left;
+	text-align: left;
+	width: auto;
+}
+
+.loginDisplay
+{
+	font-size: 1.1em;
+	display: block;
+	text-align: right;
+	padding: 10px;
+	color: White;
+}
+
+.loginDisplay a:link
+{
+	color: white;
+}
+
+.loginDisplay a:visited
+{
+	color: white;
+}
+
+.loginDisplay a:hover
+{
+	color: white;
+}
+
+.failureNotification
+{
+	font-size: 1.2em;
+	color: Red;
+}
+
+.bold
+{
+	font-weight: bold;
+}
+
+.submitButton
+{
+	text-align: right;
+	padding-right: 10px;
+}
+
+#footer a, #footer a:visited
+{
+	color: #3B72A4;
+	text-decoration: none;
+}
+
+#footer a:hover
+{
+	color: #27537c;
+	text-decoration: none;
+}
+
+/* ---------------------- My Style ------------------------ */
+
+.newsHome
+{
+	font-size: 12px;
+}
+
+#leftCorner
+{
+	background: url(Images/corner-left.png) repeat-y;
+}
+
+#rightCorner
+{
+	background: url(Images/corner-right.png) repeat-y;
+}
+
+#bgCornersLeft, #bgCornersRight
+{
+	background: url(Images/bg-corners.png) repeat;
+	z-index: 10000;
+}
+
+form + div
+{
+	display: none;
+}
+
+.SeparatorUpper
+{
+	background: url(Images/Separator-Upper.png) repeat-y;
+	height: 100%;
+	min-height:950px
+}
+
+.Separator
+{
+	/* background: url(Images/Separator.png) no-repeat;*/
+}
+
+#SeparatorBottom
+{
+	background: url(Images/Separator-bottom.png) no-repeat;
+}
+
+/* menu::base */
+div#menu
+{
+	height: 46px;
+	padding-left: 10px;
+	background: url(navImages/left.png) no-repeat;
+	_background-image: url(navImages/left.gif);
+	width: auto;
+}
+
+div#menu ul
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+}
+div#menu ul.menu
+{
+	padding-right: 10px;
+	background: url(navImages/right.png) no-repeat right 0;
+	_background-image: url(navImages/right.gif);
+}
+
+div#menu li
+{
+	position: relative;
+	margin: 0;
+	padding: 0 0 0 0;
+	display: block;
+	float: left;
+	z-index: 9;
+	width: auto;
+}
+div#menu ul ul li
+{
+	z-index: 9;
+}
+div#menu li div
+{
+	list-style: none;
+	float: left;
+	position: absolute;
+	z-index: 999;
+	top: 36px;
+	left: 0;
+	visibility: hidden;
+	width: 187px;
+	padding: 0 0 11px 7px;
+	background: url(navImages/submenu-bottom.png) no-repeat 7px bottom;
+	_background-image: url(navImages/submenu-bottom.gif);
+	margin: 0px 0 0 -4px;
+}
+div#menu li:hover > div
+{
+	visibility: visible;
+}
+
+div#menu a
+{
+	position: relative;
+	z-index: 10;
+	height: 41px;
+	display: block;
+	float: left;
+	line-height: 41px;
+	text-decoration: none;
+	margin-top: 1px;
+	white-space: nowrap;
+	width: auto;
+	padding-right: 5px;
+	text-align: center;
+}
+div#menu span
+{
+	display: block;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background-position: 95% 0;
+	text-align: center;
+}
+
+/* menu::level1 */
+div#menu a
+{
+	padding: 0 30px 0 0;
+	line-height: 40px;
+	height: 46px;
+	margin-right: 5px;
+	_margin-right: 1px;
+	background: none;
+}
+div#menu span
+{
+	margin-top: 2px;
+	padding-left: 30px;
+	color: #fff;
+	font: bold 11px Trebuchet MS,Arial,san-serif;
+	background: none;
+	line-height: 40px;
+}
+div#menu a:hover, div#menu a.over
+{
+	background: url(navImages/selected-right-sub.png) no-repeat right -1px;
+	_background-image: url(navImages/selected-right-sub.gif);
+}
+div#menu a:hover span, div#menu a.over span
+{
+	background: url(navImages/selected-left-sub.png) no-repeat 0 -3px;
+	_background-image: url(navImages/selected-left-sub.gif);
+}
+div#menu li.current a, div#menu ul.menu > li:hover > a
+{
+	background: url(navImages/selected-right-sub.png) no-repeat right -1px;
+	_background-image: url(navImages/selected-right-sub.gif);
+}
+div#menu li.current a span, div#menu ul.menu > li:hover > a span
+{
+	background: url(navImages/selected-left-sub.png) no-repeat 0 -3px;
+	_background-image: url(navImages/selected-left-sub.gif);
+}
+div#menu ul.menu > li:hover > a span
+{
+	color: #515151;
+}
+div#menu li
+{
+}
+div#menu li.last
+{
+	background: none;
+}
+
+div#menu li.current a, div#menu li.current a span, div#menu.js-active a:hover, div#menu.js-active a:hover span, div#menu.js-active a, div#menu.js-active span
+{
+	background: none;
+}
+div#menu.js-active ul.menu > li:hover > a, div#menu.js-active ul.menu > li:hover > a span
+{
+	background: none;
+}
+div#menu li.current a.over
+{
+	background: url(navImages/selected-right-sub.png) no-repeat right -1px;
+	_background-image: url(navImages/selected-right-sub.gif);
+}
+div#menu li.current a.over span
+{
+	background: url(navImages/selected-left-sub.png) no-repeat 0 -3px;
+	_background-image: url(navImages/selected-left-sub.gif);
+}
+div#menu a.over span
+{
+	color: #515151;
+}
+
+/* menu::level2 */
+div#menu ul ul li
+{
+	background: none;
+	padding: 0;
+}
+div#menu ul ul
+{
+	padding-top: 10px;
+}
+div#menu ul ul a
+{
+	padding: 0;
+	height: auto;
+	float: none;
+	display: block;
+	line-height: 26px;
+	font-size: 11px;
+	color: #ffffff;
+	z-index: -1;
+	padding-left: 5px;
+	white-space: normal;
+	width: 160px;
+	margin: 0 5px;
+	text-transform: none;
+}
+
+div#menu ul ul a span
+{
+	padding: 0 15px;
+	line-height: 26px;
+	font-size: 11px;
+}
+div#menu li.current ul a, div#menu li.current ul a span
+{
+	background: none;
+}
+div#menu ul ul a:hover
+{
+	background: url(navImages/submenu-selected-bottom.png) no-repeat 5px bottom;
+}
+div#menu ul ul a:hover span
+{
+	background: url(navImages/submenu-selected-top.png) no-repeat 0 0;
+}
+div#menu ul ul a.parent
+{
+	background: url(navImages/submenu-pointer-bottom.gif) no-repeat 5px bottom;
+}
+div#menu ul ul a.parent span
+{
+	background: url(navImages/submenu-pointer-top.png) no-repeat 0 0;
+}
+div#menu ul ul a.parent:hover
+{
+	background: url(navImages/submenu-pointer-selected-bottom.png) no-repeat 5px bottom;
+}
+div#menu ul ul a.parent:hover span
+{
+	background: url(navImages/submenu-selected-top.png) no-repeat 0 0;
+}
+div#menu ul ul span
+{
+	margin-top: 0;
+	text-align: left;
+}
+div#menu ul ul li.last
+{
+	background: none;
+}
+div#menu ul ul li
+{
+	width: 100%;
+}
+
+/* menu::level3 */
+div#menu ul ul div
+{
+	width: 180px;
+	padding: 15px 0px 8px 0px;
+	margin: -44px 0 0 169px !important;
+	background: url(navImages/subsubmenu-top.png) no-repeat 0px 0;
+	_background-image: url(navImages/subsubmenu-top.gif);
+}
+* + html div#menu ul ul div
+{
+	height: 10px;
+}
+* + html div#menu.ie7 ul ul div
+{
+	height: auto;
+}
+div#menu ul ul ul
+{
+	padding: 0 4px 5px 1px;
+	background: url(navImages/submenu-bottom.png) no-repeat 0px bottom;
+	_background-image: url(navImages/submenu-bottom.gif);
+}
+div#menu ul ul div li
+{
+	position: relative;
+	top: -5px;
+}
+
+/* lava lamp */
+div#menu li.back
+{
+	background: url(navImages/lavalamp-left.png) no-repeat 0 0;
+	_background-image: url(navImages/lavalamp-left.gif);
+	width: 10px;
+	height: 46px;
+	z-index: 8;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+}
+
+div#menu li.back .left
+{
+	padding: 0;
+	width: auto;
+	background: url(navImages/lavalamp-right.png) no-repeat right 0;
+	_background-image: url(navImages/lavalamp-right.gif);
+	height: 46px;
+	margin: 0 5px 0 10px;
+	_margin-right: 2px;
+	float: none;
+	position: relative;
+	top: 0;
+	left: 0;
+	visibility: visible;
+}
+
+
+/* ----------- Vertival Left Side Menu --------------- */
+
+#navigation-block
+{
+	position: relative;
+}
+
+#hide
+{
+	position: absolute;
+	top: 30px;
+	left: -190px;
+}
+
+ul#sliding-navigation
+{
+	list-style: none;
+	font-size: 1.1em;
+	margin: 5px 0;
+	padding: 0;
+}
+
+ul#sliding-navigation li.sliding-element h3, ul#sliding-navigation li.sliding-element a
+{
+	display: block;
+	width: 130px;
+	padding: 5px 18px;
+	margin: 0;
+	margin-bottom: 0px;
+}
+
+ul#sliding-navigation li.sliding-element h3
+{
+	color: black;
+	font-weight: normal;
+}
+
+ul#sliding-navigation li.sliding-element a
+{
+	color: #999;
+	border-bottom: 1px solid silver;
+	text-decoration: none;
+}
+
+ul#sliding-navigation li.sliding-element a:hover
+{
+	color: Red;
+}
+
+
+#InnerMain
+{
+	background: url();
+}
+
+
+.comment
+{
+	display: block;
+	background: url(http://i1.asp.net/common/forums-css/i/sprite-01.png?cdn_id=2011021016) no-repeat 0px -1600px;
+}
+
+.tblSocial
+{
+	border: 1px solid #d1d1d1;
+	background-color: #fafafa;
+	padding: 3px 10px 3px 10px;
+	margin: 10px 10px 10px 10px;
+	display: inline-block;
+	width: 190px;
+	
+	zoom:1; *display: inline; _height: 30px;
+}
+
+.tblSocialHeader
+{
+	border-bottom: 1px solid #d1d1d1;
+	background-color: #fafafa;
+	margin: 0px 0px 10px 0px;
+	padding: 5px 0px 10px 0px;
+	text-align: center;
+}
+
+.tblSocialHeadertitle
+{
+	font-size: 1.5em;
+	color: #27537c;
+	font-weight: normal;
+}
+
+.subscribe
+{
+	padding: 5px 0px 5px 0px;
+	background: url(Images/bkg-btn-blue.gif) repeat;
+	border-bottom: #2f6ea7 1px solid;
+	border-left: #3f7eb9 1px solid;
+	border-top: #508fcb 1px solid;
+	border-right: #4483bf 1px solid;
+	margin: 10px 0px 10px 0px;
+	text-align: center;
+	width: 110px;
+	float: right;
+}
+
+.subscribe div a
+{
+	color: White;
+	font-size: 1.1em;
+}
+
+.subscribe div a:hover, .subscribe:hover
+{
+	font-size:1.1em;
+	padding: 5px 0px 5px 2px;
+}
+
+
+.phoneli
+{
+	padding: 0px 0px px 0px;
+	background-color: #e2e2e2;
+	border-bottom: #fff 1px solid;
+	border-top: #fff 1px solid;
+	margin: 4px 0px 4px 0px;
+	text-align: center;
+	float: right;
+	position: relative;
+	width: 100%;
+}
+
+.pollQuestion
+{
+	border-bottom: 1px solid #d1d1d1;
+	background-color: #fafafa;
+	margin: 0px 0px 10px 0px;
+	padding: 5px 0px 10px 0px;
+	text-align: center;
+	position: relative;
+	top: -20px;
+	width:190px;
+}
+
+.pollOptions
+{
+	position: relative;
+	top: -20px;
+}
+
+.vote
+{
+	padding: 5px 0px 5px 0px;
+	background: url(Images/bk-view-orange.png) repeat;
+	margin: 10px 0px 10px 0px;
+	border-bottom: #c88b3b 1px solid;
+	border-left: #c88b3b 1px solid;
+	border-top: #c88b3b 1px solid;
+	border-right: #c88b3b 1px solid;
+	text-align: center;
+	width: 110px;
+	float: right;
+	color: White;
+	font-size: 1.1em;
+	cursor: pointer;
+	font-weight:normal;
+}
+
+.vote:hover
+{
+	font-size: 1.15em;
+	padding: 7px 2px 7px 2px;
+}
+
+.tblPoll
+{
+	border: 1px solid #d1d1d1;
+	background-color: #fafafa;
+	padding: 3px 10px 3px 10px;
+	margin: 10px 20px 10px 10px;
+	display: inline-block;
+	width: 190px;
+	
+	zoom:1; *display: inline; _height: 30px;
+}
+
+
+/* ---------------------------- New Style ----------------------------- */
+*
+{
+	margin: 0;
+	padding: 0;
+}
+#top, #bottom, #left, #right
+{
+	display: block;
+	height: 100%;
+}
+#left, #right
+{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 150px;
+}
+#left
+{
+	left: 0;
+	background: url(Images/corner-left.png) left center repeat-y;
+}
+#right
+{
+	right: 0;
+	background: url(Images/corner-right.png) right center repeat-y;
+}
+
+* html #left {
+    position : absolute;
+	background: url('') left center repeat-y;
+}
+
+* html #right {
+    position : absolute;
+	background: url('') right center repeat-y;
+}
+
+#header
+{
+	position: relative;
+	top: 0px;
+}
+#navigationBar
+{
+	position: relative;
+	width: 100%;
+}
+#leftMenu
+{
+	display:inline-block;
+	height: 100%;
+	padding-left:15px;
+	vertical-align:top;
+	border-right:1px solid silver;
+	padding-right: 5px;
+	
+	zoom:1; *display: inline; _height: 30px;
+}
+#rightMenu
+{
+	display: inline-block;
+	height: 100%;
+	vertical-align:top;
+	border-left:1px solid silver;	
+	padding-left: 5px;
+	zoom:1; *display: inline; _height: 30px;
+}
+#InnerContent
+{
+	display: inline-block;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	width: 480px;
+	min-height:110px;
+	height: 100%;
+	
+	zoom:1; *display: inline; _height: 30px;
+}
+
+div#menu
+{
+	margin: 30px auto;
+	width: 95%;
+}
+
+#tourguideHome
+{
+	border: 1px solid #d1d1d1;
+	background-color: #fafafa;
+	padding: 3px 10px 3px 10px;
+	margin: 10px 10px 10px 10px;
+	display: inline-block;
+	width: 440px;
+	height: 150px;	
+	
+	zoom:1; *display: inline; _height: 30px;
+}
+
+#tourguideImage
+{
+	float: left;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.tourguideHeader
+{
+	background-color: #fafafa;
+	margin: 0px 0px 10px 0px;
+	padding: 5px 0px 10px 0px;
+	text-align: center;
+}
+
+.tourguideTitle
+{
+	font-size: 1.5em;
+	color: #27537c;
+	font-weight: normal;
+}
+
+#tourguideBtn
+{
+	padding: 5px 0px 5px 0px;
+	background: url(Images/bkg-btn-green.png) #8dbe5c repeat-x 0px -260px;
+	border-bottom: #6a9441 1px solid;
+	border-left: #6a9441 1px solid;
+	border-top: #9bcb6b 1px solid;
+	border-right: #6a9441 1px solid;
+	margin: 10px 0px 10px 0px;
+	text-align: center;
+	width: 110px;
+	float: right;
+}
+
+
+#tourguideBtn div a
+{
+	color: White;
+	font-size: 1.1em;
+}
+
+#tourguideBtn div a:hover, #tourguideBtn:hover
+{
+	font-size: 1.1em;
+	padding: 7px 2px 5px 2px;
+}
+
+#footer
+{
+	display: inline-block;
+	clear: both;
+	height: 4em;
+	width:100%;
+	
+	zoom:1; *display: inline; _height: 30px;
+}
+
+#leftSeparatorDiv
+{
+	display: inline-block;
+	position: absolute;
+	top: 180px;
+	left: 370px;
+	width: 20px;
+	height: 100%;
+	min-height:700px;
+	
+	zoom:1; *display: inline; _height: 30px;
+}
+
+#rightSeparatorDiv
+{
+	display: inline-block;
+	position: absolute;
+	top: 180px;
+	right: 375px;
+	width: 20px;
+	height: 100%;
+	min-height:700px;
+	
+	zoom:1; *display: inline; _height: 30px;
+}
+
+.eventCat
+{
+	border-top: 1px solid #d1d1d1;
+	border-bottom: 1px solid #d1d1d1;
+	background-color: #fafafa;
+	padding: 3px 10px 3px 10px;
+	margin: 10px 10px 10px 10px;
+	display: inline-block;
+	width: 440px;
+	height: 25px;
+	vertical-align:middle;
+	
+	zoom:1; *display: inline; _height: 30px;
+}
+
+.eventCatTitle
+{
+	font-size: 1.5em;
+	color: #27537c;
+	font-weight: normal;
+}
+
+.pageTitleOuter
+{
+	border-bottom: 1px solid #d1d1d1;
+	background-color: #fff;
+	padding: 3px 10px 3px 10px;
+	margin: 10px 10px 10px 10px;
+	display: inline-block;
+	width: 440px;
+	height: 25px;
+	vertical-align:middle;	
+	zoom:1; *display: inline; _height: 30px;
+}
+
+.pageTitleInner
+{
+	font-size: 1.5em;
+	color: #27537c;
+	font-weight: normal;
+}
+
+.libraryTitleOuter
+{
+	border-bottom: 1px solid #d1d1d1;
+	background-color: #fff;
+	padding: 3px 10px 3px 10px;
+	margin: 10px 10px 10px 10px;
+	display: inline-block;
+	width: 440px;
+	height: 50px;
+	vertical-align:middle;	
+	zoom:1; *display: inline; _height: 30px;
+}
+
+.mapDiv
+{
+	border: 1px solid #d1d1d1;
+	background-color: white;
+	padding: 3px 10px 3px 10px;
+	display: inline-block;
+	zoom:1; *display: inline; _height: 30px;
+}
+
+
+.locateVillage
+{
+	padding: 5px 0px 5px 0px;
+	background: #CD5B5B;
+	border-bottom: #A52323 1px solid;
+	border-left: #A52323 1px solid;
+	border-top: #A52323 1px solid;
+	border-right: #A52323 1px solid;
+	margin: 10px 0px 10px 0px;
+	text-align: center;
+	width: 190px;
+	font-size:15px;
+	font-weight:bold;
+}
+
+.locateVillage a,.locateVillage a:visited
+{
+	color:White;
+}
+
+.locateVillage a:hover
+{
+	font-size:17px;
+}
+
+.btnContact, .btnContact:hover
+{
+	padding: 2px 2px 2px 2px;
+	background: url(Images/bkg-btn-blue.gif) repeat;
+	border-bottom: #2f6ea7 1px solid;
+	border-left: #3f7eb9 1px solid;
+	border-top: #508fcb 1px solid;
+	border-right: #4483bf 1px solid;
+	margin: 10px 0px 10px 0px;
+	text-align: center;
+	width: 110px;
+	float: right;
+	color:White;
+	cursor:normal;
+}
+.btnContact:hover
+{
+	padding: 5px 5px 5px 5px;
+	cursor:pointer;
+}
+
+.leftAd
+{
+	padding-left:20px;
+}
+
+.libraryIcon
+{
+	float:right; 
+	vertical-align:bottom; 
+	height:30px; 
+	margin-top:30px;
+}
+
+.tblHidden
+{
+	display:none;
+	padding:0 5px 0 5px;
+}

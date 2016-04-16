@@ -1,0 +1,142 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="Admin_Admin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title><asp:Literal runat="server" ID="lblPageTitle" Text="بلدية " meta:resourcekey="lblPageTitleResource1"></asp:Literal></title>
+    <link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <script src="../Scripts/jquery-1.4.2.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery.dataTables.js" type="text/javascript"></script>
+    <link href="DataTable/css/demo_page.css" rel="stylesheet" type="text/css" />
+    <link href="DataTable/css/demo_table.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .username
+        {
+            color: Red;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .page
+        {
+            font-family: Century Gothic;
+            font-size: 14px;
+        }
+        .nav
+        {
+        	text-align:center;
+        }
+        .nav a, .nav a:visited
+        {
+        	font-size:13px;
+            color: Black;
+            text-decoration: none;
+        }
+        .nav a:hover
+        {
+        	color:blue;
+        }
+        #divList
+        {
+            font-family: Century Gothic !important;
+            font-size: 13px !important;
+        }
+        #divList a
+        {
+            font-family: Century Gothic !important;
+            font-size: 13px !important;
+            text-decoration: none;
+            color: Blue;
+        }
+          .ResultMessage
+        {
+            color: Red;
+            font-family: Century Gothic;
+            font-size: 14px;
+            font-style: italic;
+        }
+        
+        a, a:visited {color:Navy;}
+        
+    </style>    
+    <form id="form1" runat="server">
+    <div>
+        <table align="center" cellpadding="0" cellspacing="0" width="970">
+          <tr>
+            <td colspan="8" width="100%">
+              <asp:Image ID="Logo" runat="server" Width="970px" Height="100px" />
+            </td>
+          </tr>
+            <tr>
+              <td></td>
+                <td colspan="7" align="center">
+                    Logged in as&nbsp;:&nbsp;
+                    <asp:Label ID="username" runat="server" class="username" 
+                        meta:resourcekey="usernameResource1"></asp:Label>
+                    <br />
+                    
+                    <asp:LinkButton runat="server" ID="signout" OnClick="SignoutClick" 
+                        CausesValidation="False" meta:resourcekey="signoutResource1">LogOut</asp:LinkButton>
+                    &nbsp;&nbsp;
+                    |
+                    &nbsp;&nbsp;
+                    <a id="webmail" href="https://login.secureserver.net/index.php?app=wbe" target="_blank">Webmail</a>
+                    &nbsp;&nbsp;
+                    |
+                    &nbsp;&nbsp;
+                    <a id="A1" href="ChangeWebmailPassword.aspx">Change Webmail Password</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                    <hr />
+                </td>
+            </tr>
+            <tr>
+                <td class="nav" width="9%" id="eventNav">
+                    <a href="EventsList.aspx">Events</a>
+                </td>
+                <td class="nav" width="9%" id="pollsNav">
+                    <a href="PollList.aspx">Polls</a>
+                </td>
+                <td class="nav" width="9%" id="newsletterNav">
+                    <a href="NewsLettersList.aspx">NewsLetters</a>
+                </td>
+                <td class="nav" width="9%" id="libraryNav">
+                    <a href="GalleryImages.aspx">Home Image</a>
+                </td>
+                <td class="nav" width="9%" id="Td1">
+                    <a href="AdList.aspx">Linked Ads</a>
+                </td>
+                <td class="nav" width="9%"id="adNav" >
+                    <a href="HomeAd.aspx">Advertisment</a>
+                </td>
+                <td class="nav" width="9%" id="sponsorsNav">
+                    <a href="StaticPageList.aspx">Static Pages</a>
+                </td>
+                <%--<td class="nav" width="9%" id="galleryNav">
+                    <a href="GalleryImages.aspx">Gallery</a>
+                </td>--%>
+                <td class="nav" width="9%" id="accountNav">
+                    <a href="ChangePassword.aspx">Change Password</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                    <hr />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8" id="divList" width="">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

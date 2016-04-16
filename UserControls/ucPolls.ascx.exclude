@@ -1,0 +1,14 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="ucPolls.ascx.cs" Inherits="UserControls_ucPolls" %>
+<%@ Register Src="Poll.ascx" TagName="Poll" TagPrefix="uc1" %>
+<div style="display: none">
+    Choose a poll:
+    <asp:DropDownList ID="PollList" runat="server" AutoPostBack="True" DataSourceID="PollListDataSource"
+        Width="200px" DataTextField="DisplayText" DataValueField="PollID" OnSelectedIndexChanged="PollList_SelectedIndexChanged">
+    </asp:DropDownList>
+    <asp:SqlDataSource ID="PollListDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:PollConnectionString %>"
+        SelectCommand="SELECT * FROM [Polls] ORDER BY [PollID]"></asp:SqlDataSource>
+    <br />
+</div>
+<uc1:Poll ID="Poll1" runat="server" />
+<asp:Button ID="Button1" runat="server" Width="240px" CausesValidation="False" Text="Cause a Postback"
+    Visible="false" />

@@ -1,0 +1,94 @@
+<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Poll.ascx.cs" Inherits="Poll" %>
+&nbsp;
+<script type="text/javascript">
+    function Vote() {
+        var id = "ctl00$ucPolls1$Poll1$PollFormView$rblPollAnswer";
+        var radio = document.getElementsByName(id);
+
+        for (var ii = 0; ii < radio.length; ii++) {
+
+            if (radio[ii].checked) {
+                $('#lblError').css('display', 'none');
+                return true; //alert(radio[ii].value);
+            }
+        }
+        $('#lblError').css('display', 'block');
+        return false;
+    }
+</script>
+<asp:SqlDataSource ID="PollDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:PollConnectionString %>"
+    OnSelecting="PollDataSource_Selecting" SelectCommand="SELECT * FROM [Polls] WHERE ([PollID] = @PollID)">
+    <SelectParameters>
+        <asp:Parameter Name="PollID" Type="Int32" />
+    </SelectParameters>
+</asp:SqlDataSource>
+<div id="vote">
+    <asp:FormView ID="PollFormView" runat="server" DataKeyNames="PollID" DataSourceID="PollDataSource"
+        OnDataBound="PollFormView_DataBound" meta:resourcekey="PollFormViewResource1">
+        <ItemTemplate>
+           
+            <table cellpadding="2" cellspacing="0" width="235px" class="tblMenuBlue">
+                <tr>
+                    <td>
+                        <div id="heading">
+                            <h1>
+                                <asp:Label CssClass="dat" ID="DisplayTextLabel" runat="server" Text='<%# Bind("DisplayText") %>'
+                                    meta:resourcekey="DisplayTextLabelResource1"></asp:Label>
+                            </h1>
+                        </div>
+                        <asp:Panel ID="pnlTakePoll" runat="server" CssClass="sawwet" meta:resourcekey="pnlTakePollResource1">
+                            <asp:RadioButtonList ID="rblPollAnswer" runat="server" DataSourceID="PollAnswersDataSource"
+                                DataTextField="DisplayText" DataValueField="PollAnswerID" meta:resourcekey="rblPollAnswerResource1">
+                            </asp:RadioButtonList>
+                            &nbsp;&nbsp;&nbsp;
+                            <asp:SqlDataSource ID="PollAnswersDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:PollConnectionString %>"
+                                OnSelecting="PollAnswersDataSource_Selecting" SelectCommand="SELECT * FROM [PollAnswers] WHERE ([PollID] = @PollID) ORDER BY [SortOrder]"
+                                InsertCommand="INSERT INTO UserResponses (UserID, PollAnswerID) VALUES (@UserID, @PollAnswerID)"
+                                OnInserting="PollAnswersDataSource_Inserting">
+                                <SelectParameters>
+                                    <asp:Parameter Name="PollID" Type="Int32" />
+                                </SelectParameters>
+                                <InsertParameters>
+                                    <asp:Parameter Name="UserID" />
+                                    <asp:ControlParameter ControlID="rblPollAnswer" Name="PollAnswerID" PropertyName="SelectedValue" />
+                                </InsertParameters>
+                            </asp:SqlDataSource>
+                            <center>
+                            <asp:LinkButton ID="btnSubmitVote" runat="server" OnClick="btnSubmitVote_Click" 
+                                 OnClientClick="return Vote();" meta:resourcekey="btnSubmitVoteResource1" >’Ê¯ </asp:LinkButton></center>
+                          <%--  <asp:Button ID="btnSubmitVote" runat="server" OnClick="btnSubmitVote_Click" Text="Vote"
+                                CssClass="sawwet" OnClientClick="return Vote();" meta:resourcekey="btnSubmitVoteResource1" />--%>
+                            <label id="lblError" style="display: none; font-size: 0.8em;">
+                                <em>
+                                    <br />
+                                    * You must first select an option.</em></label>
+                        </asp:Panel>
+                        <asp:Panel ID="pnlPollResults" runat="server" CssClass="Poll_PollResults" meta:resourcekey="pnlPollResultsResource1">
+                            <asp:SqlDataSource ID="PollResultsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:PollConnectionString %>"
+                                OnSelecting="PollResultsDataSource_Selecting" SelectCommand="SELECT a.PollAnswerID, a.PollID, a.DisplayText, a.SortOrder, COUNT(r.UserID) as Votes&#13;&#10;FROM PollAnswers a&#13;&#10;LEFT JOIN UserResponses r ON a.PollAnswerID = r.PollAnswerID&#13;&#10;WHERE a.PollID = @PollID&#13;&#10;GROUP BY a.PollAnswerID, a.PollID, a.DisplayText, a.SortOrder&#13;&#10;ORDER BY a.SortOrder">
+                                <SelectParameters>
+                                    <asp:Parameter Name="PollID" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                            <asp:DataList ID="resultsDataList" runat="server" DataKeyField="PollAnswerID" DataSourceID="PollResultsDataSource"
+                                OnDataBinding="resultsDataList_DataBinding" OnItemDataBound="resultsDataList_ItemDataBound"
+                                meta:resourcekey="resultsDataListResource1">
+                                <ItemTemplate>
+                                    <asp:Label ID="DisplayTextLabel" runat="server" Text='<%# Eval("DisplayText") %>'
+                                        meta:resourcekey="DisplayTextLabelResource2"></asp:Label>
+                                    (<asp:Label ID="VotesLabel" runat="server" Text='<%# Eval("Votes") %>' meta:resourcekey="VotesLabelResource1"></asp:Label>
+                                    √’Ê« )<br />
+                                    <asp:Image ID="PercentageImage" runat="server" Height="7px" ImageUrl="../Style/Images/bar.JPG"
+                                        meta:resourcekey="PercentageImageResource1" />
+                                    <asp:Label ID="PercentageLabel" runat="server" meta:resourcekey="PercentageLabelResource1"></asp:Label><br />
+                                    <br />
+                                </ItemTemplate>
+                            </asp:DataList>
+                            <asp:Label runat="server" ID="TotalVotesLabel" CssClass="Poll_TotalVotes" meta:resourcekey="TotalVotesLabelResource1"></asp:Label>
+                        </asp:Panel>
+                    </td>
+                </tr>
+            </table>
+        </ItemTemplate>
+    </asp:FormView>
+</div>

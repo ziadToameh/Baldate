@@ -1,0 +1,246 @@
+* { margin: 0; padding: 0; }
+body { background: #00ABD1; font-size: 76%; font-family: Tahoma, Geneva, sans-serif; direction: rtl; margin: 0; padding: 0; text-align: center; font-family: 'Simplified Arabic'; }
+a { text-decoration: none; }
+#wrapper { width: 1000px; margin: auto; background: #fff; height: auto !important; }
+#topfirst { background: black; height: 35px; width: 1000px; }
+.headerright { width: 150px; height: 25px; padding: 3px 0px 0px 0px; float: right; }
+.headerleft { width: 300px; height: 30px; padding: 5px 0px 0px 0px; float: left; color: white; margin: 0 auto; text-align: left; }
+.othersites { width: 150px; }
+#topsecond { background-image: url(images/nav5.jpg); width: 1000px; height: 40px; clear: both; margin: 0 auto; margin: 0px; padding: 0px; }
+.todayDate { font-size: 14px; float: right; width: 100px; height: 20px; color: #fff; }
+.links { width: 250px; height: 17px; float: left; margin: 0px; padding: 0px; color: #fff; }
+    .links a { font-family: Tahoma; font-size: 12px; color: #fff; text-decoration: none; }
+        .links a:hover { text-decoration: underline; }
+    .links img { border: 0; }
+#search { float: left; padding: 0px 0px 0px 0px; display: block !important; display: inline-block; }
+#headerlogo { /*width: 1000px; height: 100px; clear: both; float: left; background: #fff url(images/header.jpg);*/ }
+#headerlogoright { width: 200px; height: 100px; float: right; }
+#headerlogoteb { width: 200px; height: 100px; float: right; }
+#navigator { width: 1000px; height: 50px; clear: both; border: none; background-image: url(images/nav5.jpg); }
+ #navigator ul { margin: 0px; padding: 0px; list-style-type: none; }
+#navigator ul li { float: right; width: 140px; height: 43px; text-align: center; font-family: tahoma; font-size: 1em; color: #bbb; line-height: 0px; border-right: 1px solid #aeaeae; }
+#navigator ul li a { width: 140px; height: 40px; text-align: center; font-family: Tahoma; font-size: 1.1em; color: #FFF; text-decoration: none; line-height: 3em; vertical-align: middle; display: table-cell !important; }
+#navigator ul li a:hover { text-align: center; width: 140px; height: 40px; font-family: Tahoma; text-align: center; font-size: 1.15em; color: #fff; text-decoration: none; background: #00ABD1; line-height: 3em; display: table-cell !important; }
+#news { height: 30px; width: 1000px; margin-top: 5px; clear: both; }
+#news A:link { COLOR: blue; }
+#news A:visited { COLOR: blue; }
+#news A:hover { COLOR: red; background-color: #66ffff; }
+.tab { font-weight: bold; font-size: 12px; font-family: Arial,Helvetica; }
+.tabc { font-weight: bold; font-size: 12px; font-family: Arial,Helvetica; color: navy; TEXT-ALIGN: center; }
+.slsh { font-weight: bold; font-size: 18px; font-family: Arial,Helvetica; color: red; TEXT-ALIGN: center; }
+#news table { height: 25px; }
+#news td { height: 25px; }
+#news tr { height: 25px; }
+#intro { background: white; width: 300px; margin: 0 auto; display: inline-block; vertical-align: top; float: right; }
+#introAd { background: white; width: 200px; margin: 0 auto; display: inline-block; vertical-align: top; float: left; }
+#slider1 { background: white; width: 360px; margin: 0 auto; padding: 0px 0; direction: ltr; display: inline-block; float: right; }
+#slider { height: 180px; overflow: hidden; width: 360px; position: relative; }
+/* DEFAULT is for three panels in width, adjust as needed                              This only matters if JS is OFF, otherwise JS sets this. */
+#mover { width: 2880px; position: relative; }
+.slide { padding: 20px 30px; width: 360px; float: left; position: relative; }
+    .slide h1 { font-family: Helvetica, Sans-Serif; font-size: 20px; letter-spacing: -1px; color: #ac0000; float: left; width: 280px; line-height: 20px; }
+    .slide p { color: #999; font-size: 12px; line-height: 22px; width: 280px; float: left; }
+    .slide img { position: absolute; top: 1px; right: 70px; }
+#slider-stopper { position: absolute; top: 1px; right: 20px; background: #ac0000; color: white; padding: 3px 8px; font-size: 10px; text-transform: uppercase; z-index: 1000; }
+#mark { height: 25px; font-size: 12px; line-height: 22px; background: #f2f0f0; color: #10364d; border-top: 3px solid #10364d; border-bottom: 3px solid #10364d; margin-top: 5px; clear: both; }
+#rightcontainer { width: 800px; height: auto; background: #fff; float: left; font-family: 'Simplified Arabic'; }
+#resultsDiv { padding: 0px; margin: 0px; height: auto; }
+#searchstyle a { width: 30px; height: 10px; text-align: center; text-decoration: none; font: bold 14px Arial; color: #ffffff; padding-top: 0; background: #00ABD1; }
+    #searchstyle a:hover { background: #f2f0f0; color: #10364D; padding-top: 5px; }
+#rightcontent { background: #f2f0f0; width: 785px; margin: 0px; text-align: left; clear: both; border-bottom: #10364D 2px solid; }
+.hide { position: absolute; top: -9999px; left: -9999px; }
+#leftcontainer { width: 200px; height: auto; background: #fff; float: right; padding: 0 0px 0px 0px; border-bottom: #10364D 2px solid; }
+    #leftcontainer p { color: #448CB6; }
+#menubody { background: #fff; width: 185px; border-bottom: #10364D dashed 1px; padding: 0px; margin: 0 auto; float: right; }
+ul#menulist { width: 185px; list-style-type: none; float: center; }
+ul#menulist { padding: 0px; margin: 0 !important; }
+    ul#menulist li { text-align: right; }
+.differentli { height: 35px; width: 185px; background: url(slider/images/grad-bg.gif) repeat-x ; border-bottom: #10364d 1px dashed; padding: 0px; margin: 0 auto; float: right; color:white; }
+.secondli { height: 35px; width: 185px; background: url(images/listing-arrow.gif) no-repeat right 16px; border-bottom: #10364d 1px dashed; padding: 0px; margin: 0 auto; float: right; }
+ul#menulist a { width: 185px; height: 45px; font-size: 17px; font-family: 'Simplified Arabic'; color: #10364d; padding-right: 10px; text-decoration: none; line-height: 2.5em; display: table-cell !important; }
+    ul#menulist a:hover { font-size: 17px; font-family: 'Simplified Arabic'; font-weight: bold; line-height: 2.5em; display: table-cell !important; }
+#map { background: #fff; width: 185px; height: auto; clear: both; margin-left: 10px; margin-top: 10px; border-bottom: #10364D dashed 1px; }
+.button { width: 122px; height: 27px; display: block !important; display: inline-block; text-align: center; text-decoration: none; font: bold 17px Arial; color: #ffffff; padding-top: 5px; background: #10364D; }
+    .button:hover { background: #f2f0f0; color: #10364D; padding-top: 5px; }
+#msg1 a { width: 130px; height: 27px; display: block !important; display: inline-block; text-align: center; text-decoration: none; font: bold 17px Arial; color: #ffffff; padding-top: 5px; background: #10364D; }
+    #msg1 a:hover { background: #f2f0f0; color: #10364D; padding-top: 5px; }
+#msg { background: #fff; width: 285; height: auto; clear: both; margin-left: 10px; margin-top: 10px; border-bottom: #10364D dashed 1px; }
+    #msg img { border: 0px; }
+#vote { background: #fff; color: #10364D; width: 185; height: auto; clear: both; margin-top: 10px; text-align: right; border-bottom: #10364D dashed 1px; }
+    #vote a { width: 122px; height: auto; display: block !important; display: inline-block; text-align: center; text-decoration: none; font: bold 20px Arial; color: #ffffff; padding-top: 5px; background: #10364D; float: center; }
+        #vote a:hover { background: #f2f0f0; color: #10364D; padding-top: 5px; }
+.sawwet { margin: 10px 0 10px 0; }
+#weather { background: #fff; width: 185; height: auto; clear: both; margin-left: 10px; margin-top: 10px; border-bottom: #10364D dashed 1px; }
+#articles { background: #fff; width: 185; height: auto; clear: both; margin-left: 10px; margin-top: 10px; border-bottom: #10364D 1px; }
+#heading { height: auto; width: 185px; border-bottom: 5px solid #10364D; display: block !important; display: inline-block; padding-right: 10px; }
+    #heading h1 { color: #448CB6; font: 25px 'Simplified Arabic'; text-align: right; display: block !important; display: inline-block; }
+.Contentheading { border-bottom: 5px solid #10364D; display: block !important; display: inline-block; }
+    .Contentheading h1, .titleh1 { color: #FFF; font-size: 18px; font-family: 'Simplified Arabic'; padding-right: 5px; text-align: right; display: block !important; display: inline-block; font-weight: bolder; }
+.titleh2 { background: url(slider/images/grad-bg.gif) repeat-x; color: #FFF; font-size: 18px; font-weight: bolder; }
+    .titleh2 a { background: url(slider/images/grad-bg.gif) repeat-x; color: #FFF; font-size: 18px; font-weight: bolder; }
+        .titleh2 a:hover { background: url(slider/images/grad-bg.gif) repeat-x; color: #FFF; font-size: 20px; }
+#layers { width: 185px; height: auto; border-bottom: #10364D dashed 1px; display: block !important; display: inline-block; text-align: right; }
+    #layers a { color: #10364D; padding-top: 5px; display: block !important; display: inline-block; }
+#clear { width: 800px; display: block; height: 10px; clear: both; }
+#footer { width: 1000px; height: 200px; padding: 0px; margin: auto; text-align: right; }
+#footerup { width: 1000px; height: 160px; clear: both; background: #F2F0F0 url(images/footer-back.gif) no-repeat left bottom; }
+.subfooter { height: 160px; width: 250px; float: right; }
+    .subfooter h3 { padding: 0px; margin: 5px; text-align: center; }
+.subfootercontent { width: 200px; float: left; height: 100px; border: #10364D dashed 1px; display: block; }
+    .subfootercontent a { color: Black; }
+#footerdown { width: 1000px; height: 40px; color: #FFF; background: #3F3F3F; padding: 0px; margin: 0 auto; }
+    #footerdown p { margin: 0; padding: 10px; float: left; }
+#margindown { height: 10px; display: block; }
+/* liScroll styles */
+.tickercontainer { /* the outer div with the black border */ border: 0px solid #000; width: 1000px; height: 35px; margin: 0; padding: 0; overflow: hidden; }
+    .tickercontainer .mask { /* that serves as a mask. so you get a sort of padding both left and right */ position: relative; left: 0px; top: 2px; width: 1000px; overflow: hidden; }
+ul.newsticker { /* that's your list */ position: relative; right: 950px; list-style-type: none; margin: 0; padding: 0 0 0 10px; }
+    ul.newsticker li { float: right; /* important: display inline gives incorrect results when you check for elem's width */ margin: 0; padding: 0; /*background: #fff;*/ }
+    ul.newsticker a { white-space: nowrap; padding: 0; margin: 0 50px 0 0; }
+    ul.newsticker span { margin: 0 10px 0 0; }
+/* End of Ticker */
+
+.home-event-title { text-align: right; border: solid 1px black; }
+
+    .home-event-title a { text-align: right; font-size: 17px; color: black; padding-right: 5px; font-weight: bolder; }
+
+.home-event-date { text-align: right; border: solid 1px black; font-size: 12px; color: black; padding-right: 5px; }
+
+#wrapper_Content { text-align: right; height: 100%; }
+/*gallery*/
+#gallery { margin: 0; padding: 0; }
+
+    #gallery ul { margin: 0; padding: 0; list-style: none; }
+
+        #gallery ul li { display: block; float: right; width: 168px; margin: 0 15px 15px 0; }
+
+        #gallery ul .lmb { margin: 0 0 15px 0; }
+
+        #gallery ul li a img { width: 162px; height: 116px; padding: 2px; border: 1px solid #ccc; }
+
+            #gallery ul li a img:hover { background: #ccc; }
+/*End of gallery*/
+
+.eye1_content_left_section_02 { clear: both; width: 790px; margin: 20px 0px 0 0px; }
+
+    .eye1_content_left_section_02 .section_02_box_full { float: right; width: 770px; border: 1px solid #CCCCCC; margin: 0 10px 0 0px; }
+
+    .eye1_content_left_section_02 .section_02_box { float: right; width: 370px; border: 1px solid #CCCCCC; margin: 0 20px 0 0px; }
+
+.section_02_box { background-color: #f2f0f0; height: auto; }
+
+.section_02_box_content td label { text-decoration: none; color: #3e4346; font-size: 14px; white-space: normal; }
+
+.section_02_box_content td a { text-decoration: none; color: #3e4346; font-size: 14px; font-weight: 800; }
+
+.section_02_box_content ul { clear: both; list-style: none; margin: 0; padding: 0; }
+
+    .section_02_box_content ul li { padding: 0 15px 5px 15px; margin: 0; background: url(images/eye_listicon.png) top right no-repeat; text-decoration: none; }
+
+        .section_02_box_content ul li a { color: #3e4346; font-size: 14px; font-weight: 600; }
+
+.section_02_box img { margin: 3px 15px 0 0; }
+
+.tabsbaladi { background: url(slider/images/grad-bg.gif) repeat-x; font-weight: bolder; color: white; }
+
+
+
+
+#page { /* The main container div */ width: 275 px; margin: 0 auto; }
+
+
+
+
+#searchForm { /* The search form. */ background-color: #f2f0f0; height: 150px; border: #10364d 1px solid; margin-left: 10px; -moz-border-radius: 16px; -webkit-border-radius: 16px; border-radius: 16px; }
+
+fieldset { border: none; }
+
+#searchInputContainer { /* This div contains the transparent search box */ width: 150px; height: 36px; background: url("images/searchBox.png") no-repeat; float: left; }
+
+#s { /* The search text box. */ border: none; color: black; background: #f2f0f0; float: left; font-family: tahoma,Helvetica,sans-serif; font-size: 15px; height: 22px; line-height: 22px; outline: medium none; padding: 0 0 0 0px; text-shadow: 1px 1px 0 white; width: 170px; }
+
+/* The UL that contains the search type icons */
+
+.icons { list-style: none; margin: 0px 0 0 0px; height: 19px; float: right; clear: both; width: 275px; }
+
+    .icons li { background: url("images/icons.png") no-repeat; float: right; height: 19px; text-indent: -9999px; cursor: pointer; margin-right: 5px; }
+
+/* Styling each icon */
+
+li.web { width: 15px; }
+    li.web.active,
+    li.web:hover { background-position: left bottom; }
+
+li.images { width: 22px; background-position: -18px 0; }
+    li.images.active,
+    li.images:hover { background-position: -18px bottom; }
+
+li.news { width: 14px; background-position: -44px 0; }
+    li.news.active,
+    li.news:hover { background-position: -44px bottom; }
+
+li.videos { width: 17px; background-position: right 0; }
+    li.videos.active,
+    li.videos:hover { background-position: right bottom; }
+
+span.arrow { /* The little arrow that moves below the icons */ width: 11px; height: 6px; margin: 0 px; position: absolute; background: url('images/arrow.png') no-repeat; left: 0; }
+
+
+/* The submit button */
+
+
+#submitButton { background: url('images/search.gif') no-repeat; width: 22px; float: left; height: 22px; text-indent: -9999px; overflow: hidden; text-transform: uppercase; border: none; cursor: pointer; }
+
+    #submitButton:hover { }
+
+
+/* The Search tutorialzine.com / Search the Web radio buttons */
+
+
+#searchInContainer { float: right; margin-top: 12px; width: 275px; display: block; text-align: right; }
+
+label { color: #10364d; cursor: pointer; font-size: 11px; right: -2px; top: -2px; margin-right: 10px; white-space: nowrap; /*float:left;*/ }
+
+input[type=radio] { cursor: pointer; /*float:left;*/ }
+
+
+/* Styling the search results */
+
+
+.pageContainer { /* Holds each page with search results. Has an inset bottom border. */ border-bottom: 1px solid #5e7481; margin-bottom: 50px; background: #f2f0f0; /* Adding a dark bottom border with box shadow */ -moz-box-shadow: 0 1px 0 #798e9c; -webkit-box-shadow: 0 1px 0 #798e9c; box-shadow: 0 1px 0 #798e9c; }
+
+
+p.notFound { text-align: center; padding: 0 0 40px; }
+
+
+/* Web & news results */
+
+
+.webResult { text-shadow: 1px 1px 0 #586a75; margin-bottom: 50px; }
+    .webResult h2 { background-color: #5D6F7B; font-size: 18px; font-weight: normal; padding: 8px 20px; /* Applying CSS3 rounded corners */ -moz-border-radius: 18px; -webkit-border-radius: 18px; border-radius: 18px; }
+        .webResult h2 b { color: #fff; }
+        .webResult h2 a { color: #eee; border: none; }
+    .webResult p { line-height: 1.5; padding: 15px 20px; }
+        .webResult p b { color: white; }
+    .webResult a { margin-left: 20px; }
+/* Image & video search results */
+.imageResult { font-family: tahoma; float: left; height: 180px; margin: 0 0 20px 40px; text-align: center; width: 152px; overflow: hidden; }
+    .imageResult img { display: block; border: none; }
+    .imageResult a.pic { border: 1px solid #fff; outline: 1px solid #777; display: block; margin: 0 auto 15px; }
+/* The show more button */
+#more { width: 83px; height: 24px; background: url('img/more.png') no-repeat; cursor: pointer; margin: 40px auto; }
+
+    #more:hover { background-position: left bottom; }
+/* Giving Credit */
+
+p.credit { margin: 20px 0; text-align: center; }
+
+    p.credit a { background-color: #4B5A64; border: 1px solid; border-color: #3D4D57 #788E9B #788E9B #3D4D57; color: #c0d0d8; font-size: 10px; padding: 4px 8px; text-shadow: 1px 1px 0 #38464F; }
+
+        p.credit a:hover { background-color: #10364d; border-color: #38464f #788E9B #788E9B #38464f; }
+
+#resultsdiv a, a:visited { text-decoration: none; outline: none; border-bottom: 1px dotted #97cae6; color: #97cae6; }
+#resultsdiv { /* background-color:#f2f0f0;*/ font-family: tahoma, arial; width: 675px; display: block; margin: 0 auto; }
+    #resultsdiv a:hover { border-bottom: 1px dashed transparent; }
+
+.clear { clear: both; }

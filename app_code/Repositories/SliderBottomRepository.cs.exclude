@@ -1,0 +1,66 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+/// <summary>
+/// Summary description for SliderBottomRepository
+/// </summary>
+public class SliderBottomRepository
+{
+    MuniDataContext _db;
+	public SliderBottomRepository()
+	{
+        _db = new MuniDataContext();
+	}
+    public SliderImageBottom GetById(int pId)
+    {
+        return (from n in _db.SliderImageBottoms where n.Id == pId select n).FirstOrDefault();
+    }
+
+    public IEnumerable<SliderImageBottom> GetAll()
+    {
+        return (from n in _db.SliderImageBottoms select n).ToList();
+    }
+
+
+    public bool Add(SliderImageBottom n)
+    {
+        try
+        {
+            _db.SliderImageBottoms.InsertOnSubmit(n);
+            _db.SubmitChanges();
+        }
+        catch
+        {
+            return false;
+        }
+        return true;
+    }
+
+
+    public bool Edit(SliderImageBottom newItem)
+    {
+        var existingItem = GetById(newItem.Id);
+        existingItem.Name = newItem.Name;
+        existingItem.Description = newItem.Description;
+
+        _db.SubmitChanges();
+
+        return true;
+    }
+    public bool Delete(int id)
+    {
+        try
+        {
+            _db.SliderImageBottoms.DeleteOnSubmit(GetById(id));
+            _db.SubmitChanges();
+
+        }
+        catch
+        {
+            return false;
+        }
+        return true;
+    }
+}

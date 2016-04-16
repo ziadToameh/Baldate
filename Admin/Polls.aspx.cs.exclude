@@ -1,0 +1,40 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+
+public partial class admin_Default : System.Web.UI.Page
+{
+    CurrentPollRepository rep = new CurrentPollRepository();
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+            Bind();
+    }
+
+    public void Bind()
+    {
+        var polls = rep.GetAll();
+        currentPoll.DataValueField = "PollID";
+        currentPoll.DataTextField = "DisplayText";
+        currentPoll.DataSource = polls;
+        currentPoll.DataBind();
+
+        var current = rep.GetCurrentPoll();
+        if (current != null)
+            currentPoll.SelectedValue = current.PollId == null ?  "-1" : current.PollId.ToString() ;
+    }
+
+
+    protected void SetCurrentPoll_Click(object sender, EventArgs e)
+    {
+        rep.SetCurrentPoll(int.Parse(currentPoll.SelectedValue));
+    }
+}

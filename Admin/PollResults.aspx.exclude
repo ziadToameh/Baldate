@@ -1,0 +1,16 @@
+<%@ Page Language="C#" MasterPageFile="~/Admin/Admin.master" AutoEventWireup="true" CodeFile="PollResults.aspx.cs" Inherits="admin_PollResults" Title="Untitled Page" %>
+
+<%@ Register Src="~/UserControls/Poll.ascx" TagName="Poll" TagPrefix="uc1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <script type="text/javascript">
+        $(function () {
+            $('#pollsNav>a').css('color', 'blue');
+        });
+
+    </script>
+    <h2> Poll Results&nbsp;&nbsp;<a href="Polls.aspx">Back to List</a></h2>
+    <div style="margin-left: 15px;">
+        <uc1:Poll ID="PollView" runat="server" PollEnabled="false" />
+    </div>
+</asp:Content>
+

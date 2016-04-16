@@ -1,0 +1,121 @@
+<%@ Page Language="C#" MasterPageFile="~/Admin/Admin.master" AutoEventWireup="true" CodeFile="Polls.aspx.cs" Inherits="admin_Default" Title="Untitled Page" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<script type="text/javascript">
+    function SetCurrentPoll() {
+
+    var id = $("#<%= currentPoll.ClientID %>").val();
+    if (id == undefined || id == null || id < 1)
+        alert('please choose a poll from the list');
+    else
+        window.location = "PollCurrent.aspx?id=" + id;
+
+       /* $.ajax({
+            type: "POST",
+            url: "../app_code/MunicipalityWebService.asmx/HelloWorld",
+            data: "{}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (msg) {
+                // Hide the fake progress indicator graphic.
+                //$('#RSSContent').removeClass('loading');
+
+                // Insert the returned HTML into the <div>.
+                alert(msg.d);
+            },
+            error: function (xhr) {
+                alert(xhr.status);
+            }
+        });
+        */
+    }
+</script>
+    <script type="text/javascript">
+        $(function () {
+            $('#pollsNav>a').css('color', 'blue');
+        });
+
+    </script>
+    <asp:DropDownList ID="currentPoll" runat="server"></asp:DropDownList> <%--
+    <asp:RequiredFieldValidator runat="server" ID="rfvCurrent" ErrorMessage="Required!" ControlToValidate="currentPoll"></asp:RequiredFieldValidator>--%>
+    <a href="javascript:SetCurrentPoll();" >Set Current Poll</a>
+    
+    <asp:SqlDataSource ID="PollDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:OmsarDbConnectionString %>"
+        SelectCommand="SELECT * FROM [Polls]" DeleteCommand="DELETE FROM Polls WHERE PollID = @PollID" InsertCommand="INSERT INTO Polls (DisplayText) VALUES (@DisplayText)">
+        <DeleteParameters>
+            <asp:Parameter Name="PollID" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="DisplayText" />
+        </InsertParameters>
+    </asp:SqlDataSource>
+
+    <p>
+        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="PollID"
+            DataSourceID="PollDataSource" DefaultMode="Insert" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <Fields>
+                <asp:BoundField DataField="PollID" HeaderText="PollID" InsertVisible="False" ReadOnly="True"
+                    SortExpression="PollID" />
+                <asp:TemplateField HeaderText="Poll Question: ">
+                    <InsertItemTemplate>
+                        <asp:TextBox ID="NewPollQuestion" runat="server" Columns="75" Text='<%# Bind("DisplayText") %>'></asp:TextBox>
+
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="NewPollQuestion"
+                            ErrorMessage="You must enter text for the poll question" Display="Dynamic"></asp:RequiredFieldValidator>
+                    </InsertItemTemplate>
+                </asp:TemplateField>
+                <asp:CommandField ShowCancelButton="False" ShowInsertButton="True" InsertText="click to Add this poll" />
+            </Fields>
+            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <CommandRowStyle BackColor="#FFFFC0" Font-Bold="True" />
+            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+            <FieldHeaderStyle BackColor="#FFFF99" Font-Bold="True" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <AlternatingRowStyle BackColor="White" />
+        </asp:DetailsView>
+    </p>
+    <p>
+        <asp:GridView ID="PollGridView" runat="server" AutoGenerateColumns="False" DataKeyNames="PollID"
+            DataSourceID="PollDataSource" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <Columns>
+                <asp:HyperLinkField DataNavigateUrlFields="PollID" DataNavigateUrlFormatString="PollEdit.aspx?pid={0}"
+                    Text="Edit" />
+                <asp:TemplateField ShowHeader="False">
+                    <ItemTemplate>
+                        <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Delete"
+                            OnClientClick="return confirm('This will permanently delete this poll and all of its results. Are you sure you want to do this?');"
+                            Text="Delete"></asp:LinkButton>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:BoundField DataField="PollID" HeaderText="Poll ID" InsertVisible="False" ReadOnly="True"
+                    SortExpression="PollID" >
+                    <ItemStyle HorizontalAlign="Center" />
+                </asp:BoundField>
+                <asp:TemplateField HeaderText="Display Text" SortExpression="DisplayText">
+                    <EditItemTemplate>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="pollQuestion"
+                            ErrorMessage="You must enter text for the poll question"></asp:RequiredFieldValidator>
+                        <asp:TextBox ID="pollQuestion" runat="server" Columns="75" Text='<%# Bind("DisplayText") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label1" runat="server" Text='<%# Bind("DisplayText") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:HyperLinkField DataNavigateUrlFields="PollID" DataNavigateUrlFormatString="PollResults.aspx?pid={0}"
+                    Text="View Results" />
+            </Columns>
+            <EditRowStyle BackColor="#999999" />
+            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+            <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+            <SortedAscendingCellStyle BackColor="#E9E7E2" />
+            <SortedAscendingHeaderStyle BackColor="#506C8C" />
+            <SortedDescendingCellStyle BackColor="#FFFDF8" />
+            <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+        </asp:GridView>
+    </p>
+</asp:Content>
+

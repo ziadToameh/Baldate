@@ -1,0 +1,192 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<%@ Import Namespace="Resources" %>
+
+<%@ Register Src="UserControls/ucNav.ascx" TagName="ucNav" TagPrefix="uc2" %>
+<%@ Register Src="UserControls/ucLeftMenu.ascx" TagName="ucLeftMenu" TagPrefix="uc5" %>
+<%@ Register Src="UserControls/ucContact.ascx" TagName="ucContact" TagPrefix="uc7" %>
+<%@ Register Src="UserControls/ucAdsV.ascx" TagName="ucAdsV" TagPrefix="uc9" %>
+<%@ Register Src="UserControls/ucCalendar.ascx" TagName="ucCalendar" TagPrefix="uc11" %>
+<%@ Register Src="UserControls/ucFooter.ascx" TagName="ucFooter" TagPrefix="uc12" %>
+<%@ Register Src="UserControls/ucWeather.ascx" TagName="ucWeather" TagPrefix="uc13" %>
+<%@ Register Src="UserControls/ucAds.ascx" TagName="ucAds" TagPrefix="uc14" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+  <title>موقع بلدتي الجنوبية </title>
+  <meta name="description" content="موقع بلدتي الجنوبية " />
+  <meta name="keywords" content="العباسية, جنوب لبنان, بلدتي,موقع بلدة العباسية الجنوبية,العباسية Abbaseyyeh, Baldate, Tyre, South Lebanon" />
+  <link rel="shortcut icon" type="image/x-icon" href="Images/favicon.png" />
+  <link href="style/style_changed.css" rel="stylesheet" type="text/css" />
+
+  <asp:ContentPlaceHolder ID="head" runat="server">
+  </asp:ContentPlaceHolder>
+</head>
+<body dir="rtl">
+  <form id="form1" runat="server">
+    <div id="wrapper">
+
+      <div id="topsecond">
+        <table width="1000px">
+          <tr>
+            <td style="color: #fff">
+              <div class="todaydate">
+                <uc11:ucCalendar ID="ucCalendar1" runat="server" />
+              </div>
+            </td>
+            <td style="position: relative">
+              <div class="links">
+                <a href="Default.aspx">
+                  <img src="style/social/Home.png" width="25px" height="25px" alt="" /></a> &nbsp;&nbsp;
+                            <a href="https://www.facebook.com/pages/%D9%85%D9%88%D9%82%D8%B9-%D8%A8%D9%84%D8%AF%D8%A9-%D8%A7%D9%84%D8%B9%D8%A8%D8%A7%D8%B3%D9%8A%D8%A9-%D8%A7%D9%84%D8%AC%D9%86%D9%88%D8%A8%D9%8A%D8%A9/403326763105747?ref=br_tf" target="_blank">
+                              <img src="style/social/fb.png" width="25px" height="25px" alt="" /></a>&nbsp;&nbsp;<a href="#"><img
+                                src="style/social/Tweet.png" width="25px" height="25px" alt="" /></a>&nbsp;&nbsp;<a href="#"><img
+                                  src="style/social/YouTube.png" width="25px" height="25px" alt="" /></a>
+              </div>
+            </td>
+            <td align="left">
+              <table cellspacing="0" cellpadding="0" width="70%">
+                <tr>
+                  <td width="300px" colspan="2">
+                    <gcse:searchbox-only></gcse:searchbox-only>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="headerlogo">
+        <asp:Image ID="Logo" runat="server" Style="width: 1000px; height: 100px; clear: both; float: left;" />
+        <div class="clear"></div>
+      </div>
+      <uc2:ucNav ID="ucNav1" runat="server" />
+
+      <script src="scripts/all.js"></script>
+      <div class="Contentheading">
+        <uc14:ucAds ID="ucAds1" runat="server" />
+        <div style="width: 30%; display: inline;">
+          <asp:Repeater ID="repHAd1" runat="server">
+            <ItemTemplate>
+              <span id='divImages24_<%# Eval("Id") %>'></span>
+              <script type="text/javascript">
+                                                    <!--
+  SetHomeAd('<%# Eval("Id") %>', '<%# Eval("Images") %>', 24, 310, 120, '<%# Eval("ProfileImage") %>', 'margin-top: 10px;margin-right: 5px;margin-left: 5px;');
+                -->
+              </script>
+            </ItemTemplate>
+          </asp:Repeater>
+        </div>
+        <div style="width: 30%; display: inline;">
+          <asp:Repeater ID="repHAd2" runat="server">
+            <ItemTemplate>
+              <span id='divImages25_<%# Eval("Id") %>'></span>
+              <script type="text/javascript">
+                                                    <!--
+  SetHomeAd('<%# Eval("Id") %>', '<%# Eval("Images") %>', 25, 310, 120, '<%# Eval("ProfileImage") %>', 'margin-top: 10px;margin-right: 5px;margin-left: 5px;');
+                -->
+              </script>
+            </ItemTemplate>
+          </asp:Repeater>
+        </div>
+        <div style="width: 30%; display: inline;">
+          <asp:Repeater ID="repHAd3" runat="server">
+            <ItemTemplate>
+              <span id='divImages26_<%# Eval("Id") %>'></span>
+              <script type="text/javascript">
+                                                    <!--
+  SetHomeAd('<%# Eval("Id") %>', '<%# Eval("Images") %>', 26, 310, 120, '<%# Eval("ProfileImage") %>', 'margin-top: 10px;margin-right: 5px;margin-left: 5px;');
+                -->
+              </script>
+            </ItemTemplate>
+          </asp:Repeater>
+        </div>
+        <div style="width: 30%; display: inline;">
+          <asp:Repeater ID="repHAd4" runat="server">
+            <ItemTemplate>
+              <span id='divImages27_<%# Eval("Id") %>'></span>
+              <script type="text/javascript">
+                                                    <!--
+  SetHomeAd('<%# Eval("Id") %>', '<%# Eval("Images") %>', 27, 970, 150, '<%# Eval("ProfileImage") %>', 'margin-bottom: 10px;margin-right: 5px;margin-left: 5px;');
+                -->
+              </script>
+            </ItemTemplate>
+          </asp:Repeater>
+        </div>
+      </div>
+      <%--<iframe name="I1" src="http://www.almanar.com.lb/manarnewsbar.php" width="1000" height="25" scrolling="no" border="0" frameborder="0" marginwidth="1" marginheight="1">Your browser does not support inline frames or is currently configured not to display inline frames.</iframe>--%>
+      <div id="leftcontainer">
+        <p>
+          <uc5:ucLeftMenu ID="ucLeftMenu1" runat="server" />
+        </p>
+        <div id="introAd">
+
+          <div style="display: inline;">
+            <asp:Repeater ID="repHome" runat="server">
+              <ItemTemplate>
+                <span id='divImages27_<%# Eval("Id") %>'></span>
+                <script type="text/javascript">
+                                                    <!--
+  SetHomeAd('<%# Eval("Id") %>', '<%# Eval("Images") %>', 27, 190, 300, '<%# Eval("ProfileImage") %>', 'margin-bottom: 10px;margin-top: 10px;margin-right: 0px;margin-left: 5px;margin-top: 5px;');
+                  -->
+                </script>
+              </ItemTemplate>
+            </asp:Repeater>
+          </div>
+
+        </div>
+        <div class="fb-like-box" data-href="https://www.facebook.com/pages/%D9%85%D9%88%D9%82%D8%B9-%D8%A8%D9%84%D8%AF%D8%A9-%D8%A7%D9%84%D8%B9%D8%A8%D8%A7%D8%B3%D9%8A%D8%A9-%D8%A7%D9%84%D8%AC%D9%86%D9%88%D8%A8%D9%8A%D8%A9/403326763105747?ref=br_tf" data-width="180" data-height="300" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+        <uc9:ucAdsV ID="ucAdsV1" runat="server" />
+        <%-- <uc6:ucMaps ID="ucMaps1" runat="server" />--%>
+        <uc7:ucContact ID="ucContact1" runat="server" />
+        <div id="weather">
+          <br />
+          <div id="heading">
+            <h1>طقسنا اليوم</h1>
+          </div>
+          <br />
+          <uc13:ucWeather ID="ucWeather1" runat="server" />
+          <br />
+        </div>
+      </div>
+      <div id="rightcontainer">
+        <div id="wrapper_Content">
+          <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+          </asp:ContentPlaceHolder>
+        </div>
+      </div>
+      <!--leftcontainer-->
+      <div id="clear">
+      </div>
+      <div id="footer">
+        <uc12:ucFooter ID="ucFooter1" runat="server" />
+      </div>
+      <div id="margindown">
+      </div>
+    </div>
+  </form>
+  <map name="MapBar" id="MapBar">
+    <area alt="" shape="rect" coords="78,3,92,17" href="javascript:void(0)" onclick="return addthis_open(this, 'email', '[URL]', '[TITLE]');"
+      alt="Email" title="Email" />
+    <area alt="" shape="rect" coords="53,3,67,17" href="javascript:window.print();" alt="Print"
+      title="Print" />
+    <area alt="" shape="rect" coords="21,3,35,17" href="javascript:decreaseFontSize();"
+      alt="Reduce Font Size" title="Reduce Font Size" />
+    <area alt="" shape="rect" coords="2,3,16,17" href="javascript:increaseFontSize();"
+      alt="Increase Font Size" title="Increase Font Size" />
+  </map>
+  <script src='//www.google.com/jsapi' type='text/javascript'></script>
+  <script>
+    (function() {
+      var cx = '018015130400341885059:_64oy7qzdwi';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+          '//www.google.com/cse/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+</body>
+</html>
